@@ -165,7 +165,6 @@ public class MainActivity extends AppCompatActivity {
         switch (requestCode) {
             case PICK_FROM_CAMERA:
                 if (resultCode == RESULT_OK) {
-                    Log.d(TAG, ""+getCameraPhotoOrientation(this,Uri.parse(cameraFilePath), cameraFilePath));
                     imgPhoto.setImageURI(Uri.parse(cameraFilePath));
                     imgPhoto.setRotation(90);
                 }
@@ -176,7 +175,6 @@ public class MainActivity extends AppCompatActivity {
                     Uri selectedPhoto = data.getData();
                     imgPhoto.setImageURI(selectedPhoto);
                     Log.d(TAG, ""+selectedPhoto);
-//                    Log.d(TAG, "a "+getCameraPhotoOrientation(this,selectedPhoto, String.parse(cameraFilePath)));
                 }
                 break;
         }
@@ -227,6 +225,4 @@ public class MainActivity extends AppCompatActivity {
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
-
-
 }
